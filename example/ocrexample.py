@@ -38,8 +38,8 @@ if __name__ == '__main__':
         contrast_image_path =cv2.imread('D:/Python/nepali-licence-plate/resources/output/increased_contrast_image.jpg')
         binary_image = object_ocr.image_binary(contrast_image_path)
 
-        image_path =cv2.imread('D:/Python/nepali-licence-plate/resources/output/binary_image.jpg')
-        result = object_ocr.extract_text(image_path)
+        binary_image_path =cv2.imread('D:/Python/nepali-licence-plate/resources/output/binary_image.jpg')
+        result = object_ocr.extract_text(binary_image_path)
 
 
         # append image and ocr result
