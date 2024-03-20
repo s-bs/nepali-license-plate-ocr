@@ -5,6 +5,9 @@ class BaseOCR(ABC):
     def extract_text(self,image_path):
         raise NotImplementedError
     @abstractmethod
+    def normalize_image(self,image_path):
+        raise NotImplementedError
+    @abstractmethod
     def resize_image(self,image_path):
         raise NotImplementedError
     @abstractmethod

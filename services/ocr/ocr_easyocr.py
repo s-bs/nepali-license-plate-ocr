@@ -6,6 +6,19 @@ import cv2
 from baseocr import BaseOCR
 
 class EasyOCR(BaseOCR):
+    def normalize_image(self,image_path):
+        
+            # Load the image using OpenCV
+        img = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
+
+         # Normalize the image
+        img_normalized = cv2.normalize(img, None, alpha=0, beta=255, norm_type=cv2.NORM_MINMAX)
+
+      # Save the normalized image
+        output_path = "D:/Python/nepali-licence-plate/resources/output/normalized_image.jpg"
+        cv2.imwrite(output_path, img_normalized)
+
+        
     def resize_image(self,image_path):
         # Calculate the desired size
         original_width, original_height = image_path.size

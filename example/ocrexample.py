@@ -8,22 +8,6 @@ import pandas as pd
 import os
 
 
-# if __name__ == '__main__':
-#     # Open the image
-#     object_ocr = ocr_easyocr.EasyOCR()
-    
-#     original_image_path = Image.open("D:/Python/nepali-licence-plate/resources/images/dataset/1.jpg")    
-#     resize = object_ocr.resize_image(original_image_path)
-    
-#     resize_image_path = Image.open("D:/Python/nepali-licence-plate/resources/output/resized_image.jpg")
-#     contrast = object_ocr.image_contrast(resize_image_path)
-    
-#     contrast_image_path =cv2.imread('D:/Python/nepali-licence-plate/resources/output/increased_contrast_image.jpg')
-#     binary_image = object_ocr.image_binary(contrast_image_path)
-    
-#     image_path =cv2.imread('D:/Python/nepali-licence-plate/resources/output/binary_image.jpg')
-#     result = object_ocr.extract_text(image_path)
-
 if __name__ == '__main__':
     # Open the image
     object_ocr = ocr_easyocr.EasyOCR()
@@ -41,9 +25,12 @@ if __name__ == '__main__':
         image_path = os.path.join(directory, filename)
 
         # original_image = Image.open(image_path)
-        original_image_path = Image.open(image_path)
+        # original_image_path = Image.open(image_path)
+        
+        image_normal = object_ocr.normalize_image(image_path)
 
-        resize = object_ocr.resize_image(original_image_path)
+        normalize_image_path = Image.open("D:/Python/nepali-licence-plate/resources/output/normalized_image.jpg")
+        resize = object_ocr.resize_image(normalize_image_path)
 
         resize_image_path = Image.open("D:/Python/nepali-licence-plate/resources/output/resized_image.jpg")
         contrast = object_ocr.image_contrast(resize_image_path)
