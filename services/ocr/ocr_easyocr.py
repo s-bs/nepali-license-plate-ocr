@@ -32,9 +32,11 @@ class EasyOCR(BaseOCR):
              
         
     def extract_text(self,image_path):
+        detected =[]
         reader = easyocr.Reader(['ne'])
         result = reader.readtext(image_path)
         for detect in result:
-            print(detect[1])
-            
+            # print(detect[1])
+            detected.append(detect[1])
+        return detected
     
